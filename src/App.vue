@@ -1,6 +1,7 @@
 <template>
-  <div id="app">
-    <image-preview></image-preview>
+  <div id="app" ref="app">
+    <img src="./assets/logo.png" alt="">
+    <image-preview :images-ref="appRef"></image-preview>
   </div>
 </template>
 
@@ -11,6 +12,14 @@ export default {
   name: 'app',
   components: {
     ImagePreview
+  },
+  data(){
+    return {
+      appRef: ''
+    }
+  },
+  mounted(){
+    this.appRef = this.$refs.app;
   }
 }
 </script>
